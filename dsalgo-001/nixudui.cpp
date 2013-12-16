@@ -1,0 +1,53 @@
+#include <iostream>
+#include<stdio.h>
+#include "string.h"
+#include<stdlib.h>
+#define INF 0xffffff		//??????
+
+using namespace std;
+
+char str[200][200];		//????????????????
+int num[200];			//?????
+
+int main()
+{
+	int m,n;
+	memset(num,0,sizeof(num));
+	cin>>n;
+	cin>>m;
+
+	num[0] = INF;		//???num[0]?????,?????????????????
+	for (int i=1;i<=m;i++)
+	{
+		cin>>str[i];
+		
+		for (int j=0;j<n;j++)
+		{
+			for (int k=j+1;k<n;k++)
+			{
+				if (str[i][j] > str[i][k])
+				{
+					num[i]++;
+				}
+			}
+		}
+
+	}
+	int p=0;
+	for (int i=1;i<=m;i++)
+	{
+		for (int j=1;j<=m;j++)
+		{
+			if (num[j] < num[p])
+			{
+				p = j;
+			}
+		}
+		cout<<str[p]<<endl;
+		num[p] = INF;		//???num[p]??????,??????????
+
+	}
+
+	return 0;
+	
+}
