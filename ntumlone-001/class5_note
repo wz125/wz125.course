@@ -1,0 +1,9 @@
+---
+layout: post
+title: " 第五講: Training versus Testing"
+description: " 機器學習基石 (Machine Learning Foundations) "
+category: MachineLearning
+tags: [ML]
+---
+{% include JB/setup %}
+xxxxxxxxxx
